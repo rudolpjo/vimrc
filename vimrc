@@ -67,10 +67,13 @@ set smartindent
 set cindent
 "inoremap { {<CR>}<up><end><CR>
 
-"tab is 4 spaces
-set tabstop=4
-"indent is 4 spaces
-set shiftwidth=4
+"tab is 2 spaces
+set tabstop=2
+"indent is 2 spaces
+set shiftwidth=2
+"tab is set to 4 for python files
+autocmd Filetype py setlocal tabstop=4
+autocmd Filetype py setlocal shiftwidth=4
 "expand tabs to spaces
 set expandtab
 
@@ -88,6 +91,13 @@ set number
 "show matching braces
 set showmatch
 
+"automatically closing braces and quotes
+inoremap { {}<Esc>ha
+inoremap ( ()<Esc>ha
+inoremap [ []<Esc>ha
+inoremap " ""<Esc>ha
+inoremap ' ''<Esc>ha
+inoremap ` ``<Esc>ha
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "key mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
